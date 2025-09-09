@@ -15,6 +15,7 @@ namespace Age_Calculator
             string B_Day = Console.ReadLine();
             int B_DAY = Convert.ToInt32(B_Day); //Converts the Year(DOB) Input from String To Integer
             int Current_Year = DateTime.Now.Year; 
+            //Prevents Future Year as Input
             if (Current_Year < B_DAY) 
             {
                 Console.WriteLine("Sorry Input A Correct Year, You Werent Born in the Future"); //Prints When Inputted Year is Greater Than Current Year
@@ -22,6 +23,7 @@ namespace Age_Calculator
             {
                 int Age = DateTime.Now.Year - B_DAY; //Subtracts Users Input(B_DAY) from Current Year
                 Console.WriteLine("You Are " + Age + " Years Old");
+                //Age Categories
                  if (Age <= 5) 
             {
                     Console.Write(" Hence You are a Baby/Toddler :)"); 
