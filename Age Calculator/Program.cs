@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ namespace Age_Calculator
                     
                     
                         double Age = (double)Diff.Days / 365.25;
+                    int Age_Whole = (int)Diff.Days / 365;
                         double Age_round = Math.Round(Age, 2);
                         Console.WriteLine("Would You like It Measured in\n1.Years\n2.Months\n3.Days\n4.Hours\n5.Seconds");
                         Console.Write("--Option: ");
@@ -42,7 +44,8 @@ namespace Age_Calculator
                                 switch (AGE)
                         {
                             case 1:
-                                Console.WriteLine("You are " + Age_round + " Years Old");
+                                
+                                Console.WriteLine("You are " + Age_Whole + " Years Old Or " + Age_round + " To be Exact");
                                 PrintAgeClass(Age);
                                 break;
                             case 2:
