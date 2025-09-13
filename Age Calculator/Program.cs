@@ -15,11 +15,14 @@ namespace Age_Calculator
             Console.WriteLine("Hello, I Calculate How Old You Are, using Your BirthDay\nSO Lets get Started");
             Console.Write("When Is Your Birthday(YEAR-MONTH-DAY)\nExample (2024-01-31) : ");
             DateTime Current_Date = DateTime.Now;
+            string B_Day = Console.ReadLine();
             
             
 
-            if (DateTime.TryParse(Console.ReadLine(), out DateTime B_DAY))
+            if (DateTime.TryParse(B_Day, out DateTime B_DAY))
             {
+
+                 
                 TimeSpan Diff = DateTime.Now  - B_DAY;
                 if (Current_Date < B_DAY)
                 {
@@ -27,55 +30,55 @@ namespace Age_Calculator
                 }
                 else
                 {
-                    double Age = (double)Diff.Days / 365.25;
-                    double Age_round = Math.Round(Age, 2);
-                    Console.WriteLine("Would You like It Measured in\n1.Years\n2.Months\n3.Days\n4.Hours\n5.Seconds");
-                    Console.Write("--Option: ");
-                    string age = Console.ReadLine();
-                    if (int.TryParse(age, out int AGE))
-                    {
-                        if (AGE == 1)
+                    
+                    
+                        double Age = (double)Diff.Days / 365.25;
+                        double Age_round = Math.Round(Age, 2);
+                        Console.WriteLine("Would You like It Measured in\n1.Years\n2.Months\n3.Days\n4.Hours\n5.Seconds");
+                        Console.Write("--Option: ");
+                        string age = Console.ReadLine();
+                        if (int.TryParse(age, out int AGE))
                         {
-                            Console.WriteLine("You have Lived For Approximately " + Age_round + " Years");
-                            PrintAgeClass(Age);
-                        }
-                        else if (AGE == 2)
+                                switch (AGE)
                         {
-                            double age_month = (double)Diff.Days / 30.44;
-                            double age_month_round = Math.Round(age_month, 2);
-                            Console.WriteLine("You have Lived For Approximately " + age_month_round + " Months");
-                            PrintAgeClass(Age);
-                        }
-                        else if (AGE == 3)
-                        {
-                            double age_days = (double)Diff.Days;
-                            double age_days_round = Math.Round(age_days, 2);
-                            Console.WriteLine("You are " + age_days + " Days Old");
-                            PrintAgeClass(Age);
-                        }
-                        else if (AGE == 4)
-                        {
-                            int age_hrs = (int)Diff.TotalHours;
+                            case 1:
+                                Console.WriteLine("You are " + Age_round + " Years Old");
+                                PrintAgeClass(Age);
+                                break;
+                            case 2:
+                                double Age_in_Months = (double)Diff.Days / 30.44;
+                                double Age_in_Months_round = Math.Round(Age_in_Months, 2);
+                                Console.WriteLine("You are " + Age_in_Months_round + " Months Old");
+                                PrintAgeClass(Age);
+                                break;
+                            case 3:
+                                Console.WriteLine("You are " + Diff.Days + " Days Old");
+                                PrintAgeClass(Age);
+                                break;
+                            case 4:
+                                double Age_in_Hours = Diff.TotalHours;
+                                double Age_in_Hours_round = Math.Round(Age_in_Hours, 2);
+                                Console.WriteLine("You are " + Age_in_Hours_round + " Hours Old");
+                                PrintAgeClass(Age);
+                                break;
+                            case 5:
+                                double Age_in_Seconds = Diff.TotalSeconds;
+                                double Age_in_Seconds_round = Math.Round(Age_in_Seconds, 2);
+                                Console.WriteLine("You are " + Age_in_Seconds_round + " Seconds Old");
+                                PrintAgeClass(Age);
+                                break;
+                            default:
+                                Console.WriteLine(age + " is not a Valid Option");
+                                break;
+                        }   
                             
-                            
-                            Console.WriteLine("You are " + age_hrs + " Hours Old");
-                            PrintAgeClass(Age);
-                        }
-                        else if (AGE == 5)
-                        {
-                            int age_sec = (int)Diff.TotalSeconds;
-                            Console.WriteLine("You Have Lived for " + age_sec + " Seconds ,Damn thats Long ");
-                            PrintAgeClass(Age);
                         }
                         else
                         {
-                            Console.WriteLine("Option " + age + " is not an Available Option");
+                            Console.WriteLine(age + " is not a Valid Option");
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine(age + " is not a Valid Option");
-                    }
+                    
+                    
 
 
 
@@ -94,7 +97,12 @@ namespace Age_Calculator
         {
             
             //Age Categories
-            if (Age <= 5)
+            if (Age < 1)
+            {
+                Console.Write("Hemce You are an Infant,but wait if you are an Infant How Could Use This App?");
+            }
+            
+             else if (Age <= 5)
             {
                 Console.Write("Hence You are a Baby/Toddler :)");
             }
