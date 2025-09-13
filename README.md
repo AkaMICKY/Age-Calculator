@@ -1,27 +1,57 @@
 # 🧮 Age Calculator
 
-A simple C# console application that asks for the user’s birth year and calculates their current age. It’s a small but practical project to practice working with DateTime and basic input/output in C#.
+This is a simple **C# Age Calculator** that calculates your exact age based on your birthday.  
+It allows you to see your age in **years, months, days, hours, or seconds**.
 
-⚡ Installation  
-Clone the repository with:  
-git clone https://github.com/AkaMicky/AgeCalculator.git  
-cd AgeCalculator  
-Open the project in Visual Studio (or any C# IDE) and run the program.
+---
 
-🎯 Usage  
-When prompted, enter your birth year. The program subtracts it from the current year and displays your age.  
-Example:  
-Enter your birth year: 2010  
-You are 15 years old.
+## 📌 Usage
 
-🔮 Future Improvements  
-- Add TryParse to handle invalid input and prevent crashes.  
-- Extend functionality to calculate how long you’ve lived not only in years, but also in months, days, hours, minutes, and seconds.
+1. Run the program.  
+2. Enter your birthday in the format `YEAR-MONTH-DAY` (e.g., `2009-08-15`).  
+3. Choose the unit of measurement:  
+   - 1 → Years  
+   - 2 → Months  
+   - 3 → Days  
+   - 4 → Hours  
+   - 5 → Seconds  
 
-🛠️ Technologies Used  
-C#, .NET Console Application
+---
 
-📚 What I Learned  
-- How to use DateTime.Now.Year in C#  
-- Accepting user input with Console.ReadLine()  
-- Performing simple arithmetic to solve real-world problems
+## 💻 Example
+
+Hello, I Calculate How Old You Are, using Your BirthDay  
+So, let's get Started  
+When Is Your Birthday (YEAR-MONTH-DAY)  
+Example (2024-01-31) : 2009-08-15  
+
+Would You like It Measured in  
+1. Years  
+2. Months  
+3. Days  
+4. Hours  
+5. Seconds  
+--Option: 1  
+
+You are 14.57 Years Old  
+Hence, You are a Teenager ;)
+
+---
+
+## 🚀 Future Improvements  
+- 🎂 Time until next birthday (countdown).  
+- 📆 Exact age in weeks.  
+- 🌕 Fun facts (e.g., *"You’ve lived through 300 full moons!"*).  
+- 👶 More detailed infant/toddler breakdown.  
+- 📱 Add GUI and loop system → could be published as a Play Store app.  
+
+---
+
+## 🛠️ Tech Stack  
+- **Language**: C#  
+- **Framework**: .NET  
+
+---
+
+## 👨‍💻 Author  
+Built with curiosity and passion by **Akanmen Michael Eronmosele** 🚀  
