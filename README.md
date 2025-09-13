@@ -33,7 +33,7 @@ Would You like It Measured in
 5. Seconds  
 --Option: 1  
 
-You are 14.57 Years Old  
+You are 14 Years Old Or 14.27 To be Exact  
 Hence, You are a Teenager ;)
 
 ---
