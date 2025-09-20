@@ -13,7 +13,7 @@ namespace Age_Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, I Calculate How Old You Are, using Your BirthDay\nSO Lets get Started");
+            Console.WriteLine("Hello, I Calculate How Old You Are, using Your BirthDay\nSo Lets get Started");
             Console.Write("When Is Your Birthday(YEAR-MONTH-DAY)\nExample (2024-01-31) : ");
             DateTime Current_Date = DateTime.Now;
             string B_Day = Console.ReadLine();
@@ -38,10 +38,10 @@ namespace Age_Calculator
                         double Age_round = Math.Round(Age, 2);
                         Console.WriteLine("Would You like It Measured in\n1.Years\n2.Months\n3.Days\n4.Hours\n5.Seconds");
                         Console.Write("--Option: ");
-                        string age = Console.ReadLine();
-                        if (int.TryParse(age, out int AGE))
+                        string option = Console.ReadLine();
+                        if (int.TryParse(option, out int OPTION))
                         {
-                                switch (AGE)
+                                switch (OPTION)
                         {
                             case 1:
                                 
@@ -71,14 +71,14 @@ namespace Age_Calculator
                                 PrintAgeClass(Age);
                                 break;
                             default:
-                                Console.WriteLine(age + " is not a Valid Option");
+                                Console.WriteLine(option + " is not a Valid Option");
                                 break;
                         }   
                             
                         }
                         else
                         {
-                            Console.WriteLine(age + " is not a Valid Option");
+                            Console.WriteLine(option + " is not a Valid Option");
                         }
                     
                     
@@ -98,16 +98,16 @@ namespace Age_Calculator
 
         static void PrintAgeClass(double Age)
         {
-            
+
             //Age Categories
             if (Age < 1)
             {
-                Console.Write("Hemce You are an Infant,but wait if you are an Infant How Could Use This App?");
+                Console.WriteLine("Hemce You are an Infant,but wait if you are an Infant How Could Use This App?");
             }
-            
-             else if (Age <= 5)
+
+            else if (Age <= 5)
             {
-                Console.Write("Hence You are a Baby/Toddler :)");
+                Console.WriteLine("Hence You are a Baby/Toddler :)");
             }
             else if (Age <= 12)
             {
@@ -133,7 +133,24 @@ namespace Age_Calculator
             {
                 Console.WriteLine("Hence You Are an OLD Elder :(");
             }
-
+            double Age_R = Math.Round(Age);
+            if (Age_R < Age)
+            {
+                int Next_BirthDay = (int)(Age_R + 1);
+                double Diff_Age = (double)(Next_BirthDay - Age);
+                double Diff_Age_Days = Diff_Age * 365.25;
+                double Diff_Age_Months = Diff_Age * 12;
+                double Diff_Age_Months_Round = Math.Round(Diff_Age_Months, 1);
+                Console.WriteLine("You have " + Diff_Age_Days + " Days Till Your Next Birthday or " + Diff_Age_Months_Round + " Months!");
+            }
+            else
+            {
+                double diff = (double)(Age_R - Age);
+                double diff_days = diff * 365.25;
+                double diff_months = diff * 12;
+                double diff_months_round = Math.Round(diff_months, 1);
+                Console.WriteLine("You have " + diff_days + " Days Till Your Next Birthday or " + diff_months_round + " Months!");
+            }
         }
     }
 }
