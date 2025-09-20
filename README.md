@@ -1,10 +1,15 @@
 # 🧮 Age Calculator
 
-This is a simple **C# Age Calculator** that calculates your exact age based on your birthday.  
-It allows you to see your age in **years, months, days, hours, or seconds**.
+A tiny, beginner-written C# console utility that tells you how old you are in whatever unit you like and gives you a playful label (“Teenager”, “Elder”, …) plus a countdown to your next birthday.
 
 ---
 
+## Features
+- Validates the date format (`YYYY-MM-DD`) and rejects future birthdays.
+- Choose output unit: years, months, days, hours or seconds.
+- Displays both the rounded age and a more precise decimal value.
+- Prints a friendly life-stage label (Infant, Toddler, Child, Teenager, Young Adult, Middle-Age, Elder, Old-Elder).
+- Counts down days & months until your next birthday.
 ## 📌 Usage
 
 1. Run the program.  
@@ -33,13 +38,15 @@ Would You like It Measured in
 5. Seconds  
 --Option: 1  
 
-You are 14.57 Years Old  
+You are 16 Years Old Or 16.1 To be Exact  
 Hence, You are a Teenager ;)
+You have 329.25 Days Till Your Next Birthday or 10.8 Months!
 
 ---
 
 ## 🚀 Future Improvements  
-- 🎂 Time until next birthday (countdown).  
+-  Accept more date formats (dd/MM/yyyy, MM-dd-yyyy, …) via TryParseExact.
+- Add “leap-day” detection and special messages for Feb-29 birthdays
 - 📆 Exact age in weeks.  
 - 🌕 Fun facts (e.g., *"You’ve lived through 300 full moons!"*).  
 - 👶 More detailed infant/toddler breakdown.  
